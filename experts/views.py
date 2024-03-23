@@ -333,7 +333,7 @@ def create_message(request, pk):
 
 
 from django.shortcuts import render
-from .models import Expert
+from .models import Experts
 
 # Quick sort implementation
 def quick_sort(arr):
