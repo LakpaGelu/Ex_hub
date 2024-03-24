@@ -1,0 +1,18 @@
+  <!-- Top Navigation -->
+  {% load static %}
+
+    <nav id="separate-navigation">
+      <a href="{% url 'landing-page' %}"><img src="{% static 'images/Exhub_logo.png' %}" alt="logo" class="main-logo" /></a>
+      <div id="separate-navigation__links">
+        <a href="{% url 'landing-page' %}" class="sep-links">Home</a>
+        <a href="{% url 'expert-list' %}" class="sep-links">Experts</a>
+        <a href="#categories" class="sep-links">Categories</a>
+        <a href="{% url 'account' %}" class="sep-links">Account</a>
+        <a href="{% url 'inbox' %}" class="sep-links">Inbox</a>
+        <a href="/additional/blogs.html" class="sep-links">Blogs</a>
+      </div>
+      <div class="sep__logsign">
+        <a href="{% url 'user-logout' %}"><button type="button" class="button login">LOG OUT</button></a>
+      </div>
+    </nav>
+

@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block additional_content %}
+<div class="hero">
+    <div class="topmost">
+        <nav class="top-nav">
+            <img src="{% static 'images/Exhub_logo.png' %}" alt="logo" class="main-logo">
+            <div class="nav-links">
+                <a href="{% url 'landing-page' %}" class="nav-link">Home</a>
+                <a href="{% url 'expert-list' %}" class="nav-link">Experts</a>
+                <a href="{% url 'landing-page' %}" class="nav-link">Categories</a>
+                <a href="#testimonials" class="nav-link">Account</a>
+                <a href="/aboutUs.html" class="nav-link">Inbox</a>
+                <a href="/additional/blogs.html" class="nav-link">Blogs</a>
+            </div>
+            <div class="log-sign">
+                <a href="{% url 'user-logout' %}"><button type="button" class="button login">LOG OUT</button></a>
+            </div>
+        </nav>
+
+        <h1 class="slogan">Connect with <span class="bold-text"><b>Experts</b></span></h1>
+
+        <form action="{% url 'expert-list' %}" method="get" class="search-field">
+            <img src="{% static 'images/search-icon.png' %}" alt="Search icon" class="search-icon">
+            <input class="field" type="search" placeholder="e.g. Fashion Designing" name="search_query" value="{{search_query}}"
+                   id="search" required/>
+            <input type="submit" class="submit-btn" value="Search">
+        </form>
+
+    </div>
+</div>
+
+  <div id="experts" class="experts parent-div">
+    <div class="cards">
+      {% for expert in experts %}
+      <div class="card-container">
+        <div class="card-image">
+          <img src="{{expert.profile_photo.url}}" alt="{{expert.full_name}}">
+        </div>
+        <div class="card-content">
+          <h3 class="expert-name">{{expert.full_name}}</h3>
+          <h4 class="designation">{{expert.position}}</h4>
+            <a href="{% url 'expert-details' expert.id %}"><button type="button" class="card-btn">View Profile</button></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% include 'pagination.html' with queryset=experts custom_range=custom_range %}
+  </div>
+
+
+
+{% endblock additional_content %}
