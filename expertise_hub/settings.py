@@ -74,7 +74,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'expertise_hub',
         'USER': 'root',
-        'PASSWORD': 'Fort.ace77',
+        'PASSWORD': 'admin',
         'HOST': 'localhost',
         'PORT': 3306,
     }

@@ -893,3 +893,12 @@ a.link-style{
  {
 color : black;
 }
+.btn-reply{
+margin-top: 20px;
+padding: 5px 12px;
+color: white;
+background: #1679AB;
+border-radius: 3px;
+outline: none;
+cursor: pointer;
+}
